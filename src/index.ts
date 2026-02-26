@@ -7,7 +7,6 @@ import {
 } from "siyuan";
 
 import { svelteDialog } from "@/libs/dialog";
-import * as advanced from "@/components/utils/advanced";
 
 import * as sdk from "@siyuan-community/siyuan-sdk";
 import Homepage from "./components/homepage.svelte";
@@ -25,7 +24,7 @@ export default class PluginHomepage extends Plugin {
     customTab: () => IModel;
     isMobile: boolean;
     currentMobileDialog: any = null;
-    ADVANCED = false;
+    ADVANCED = true;
     private docTreeMenuEventBindThis = this.handleDocTreeMenu.bind(this);
     private contentMenuEventBindThis = this.handleContentMenu.bind(this);
 
