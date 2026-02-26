@@ -1248,7 +1248,7 @@
                                         <div class="plan-price">69 元</div>
                                         <div class="plan-duration">/ 年</div>
                                     </div>
-                               // </div>
+
                             </div>
                             <div class="purchase-address">
                                 <h4>🛍️ 购买地址</h4>
