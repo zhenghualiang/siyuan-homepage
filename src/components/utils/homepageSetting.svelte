@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
     import "emoji-picker-element";
     import "./homepageSettingStyle/homepageSetting.scss";
-    import * as advanced from "./advanced";
+    //import * as advanced from "./advanced";
     import { showMessage } from "siyuan";
 
     export let plugin: any;
@@ -446,27 +446,7 @@
             on:click={() => (activeTab = "homepage")}
             class:active={activeTab === "homepage"}>主页设置</button
         >
-        <button
-            on:click={async () => {
-                activeTab = "vip";
-                await advanced.updateVIP().then((res) => {
-                    USER_NAME = res.USER_NAME;
-                    USER_ID = res.USER_ID;
-                    USER_CODE = res.ENCRYPTED_USER_CODE;
-                });
-                activationResult = await advanced.verifyLicense(
-                    plugin,
-                    USER_NAME,
-                    USER_ID,
-                );
-                activated = activationResult.valid;
-                if (!activated && activationResult.code != 2) {
-                    showMessage(activationResult.error);
-                    advanced.deleteLicense(plugin);
-                }
-            }}
-            class:active={activeTab === "vip"}>会员服务</button
-        >
+        
         <button
             on:click={() => (activeTab = "about")}
             class:active={activeTab === "about"}>关于插件</button
@@ -1185,8 +1165,7 @@
                 >
                 <button class="btn" on:click={cancelSave}>❌ 取消</button>
             </div>
-        {:else if activeTab === "vip"}
-            <div class="vip-section">
+
                 <div class="vip-info">
                     {#if USER_NAME || USER_ID}
                         <label for="">用户名：{USER_NAME}</label>
